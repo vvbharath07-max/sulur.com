@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sulur.com — Sulur, Coimbatore</title>
+  <meta name="description" content="A simple, modern landing page for Sulur — a suburb of Coimbatore, Tamil Nadu. Learn about places, services, and local highlights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: #121832;
+      --text: #e8ecf8;
+      --muted: #aab0c8;
+      --brand: #5f85ff;
+      --brand-2: #59e1ff;
+      --accent: #4ade80;
+      --card: #0f1429;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1100px,92%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,16,32,.95), rgba(11,16,32,.75) 60%, rgba(11,16,32,0));backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .nav a.link{padding:10px 14px;border-radius:12px;border:1px solid transparent}
+    .nav a.link:hover{border-color:var(--border);background:rgba(255,255,255,0.04)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#081022;font-weight:700;border:none;cursor:pointer;box-shadow:var(--shadow)}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border);box-shadow:none}
+    .hero{position:relative;padding:80px 0 40px;background:
+      radial-gradient(1000px 400px at 80% -10%, rgba(95,133,255,.25), transparent 60%),
+      radial-gradient(800px 400px at -10% 0%, rgba(89,225,255,.18), transparent 60%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:center}
+    .hero h1{font-size: clamp(2rem, 3vw + 1rem, 3.2rem);line-height:1.1;margin:0 0 14px}
+    .hero p{color:var(--muted);margin:0 0 24px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .badge{display:inline-block;font-size:.8rem;padding:6px 10px;border-radius:999px;background:#0b1533;border:1px solid var(--border);color:var(--brand-2);margin-right:8px}
+    section{padding:64px 0;border-top:1px solid var(--border)}
+    h2{font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .place{background:var(--panel);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+    .place img{aspect-ratio:16/9;object-fit:cover}
+    .place .p{padding:16px}
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .pill{padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:#0e1738}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:18px}
+    .map{border:0;width:100%;height:360px;border-radius:16px}
+    footer{padding:36px 0;border-top:1px solid var(--border);color:var(--muted)}
+    .footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .tag{font-size:.9rem;color:#d0e9ff;background:rgba(89,225,255,.08);border:1px solid var(--border);padding:6px 10px;border-radius:12px}
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .footergrid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><span class="dot"></span> SULUR<span style="opacity:.7">.com</span></div>
+      <nav style="display:flex;gap:6px">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#places">Places</a>
+        <a class="link" href="#map">Map</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="badge">Welcome to Sulur</div>
+          <h1>Gateway to Eastern Coimbatore — calm, connected, and growing.</h1>
+          <p>Discover neighbourhoods, schools, markets, and the serene Sulur Lake. This simple site shares highlights and helpful links for residents and visitors.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#places">Explore Places</a>
+            <a class="btn ghost" href="#map">View Map</a>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <strong>Good Connectivity</strong>
+              <p class="muted">On the Coimbatore–Trichy highway, with bus access and nearby rail/air links.</p>
+            </div>
+            <div class="card">
+              <strong>Education Hub</strong>
+              <p class="muted">Colleges and schools serve the wider Sulur &amp; Kumarapalayam area.</p>
+            </div>
+            <div class="card">
+              <strong>Nature &amp; Heritage</strong>
+              <p class="muted">Sulur Lake, temples, weekly markets, and a calm suburban vibe.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="panel">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop" alt="Illustrative skyline" />
+            <p class="muted" style="margin:10px 0 0">Representative image. Replace with your own Sulur/Coimbatore photos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About Sulur</h2>
+        <p class="muted">Sulur is a suburb of Coimbatore, Tamil Nadu, known for its growing residential pockets, educational institutions, local industry, and access to the Coimbatore International Airport. The area includes Sulur Lake and is connected by the Coimbatore–Trichy highway.</p>
+        <div class="pillrow">
+          <span class="pill">Coimbatore East</span>
+          <span class="pill">Suburban Lifestyle</span>
+          <span class="pill">Sulur Lake</span>
+          <span class="pill">Educational Institutions</span>
+          <span class="pill">Temples &amp; Markets</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="places">
+      <div class="wrap">
+        <h2>Places to check out</h2>
+        <p class="muted">A few ideas — customise this list with your favourites.</p>
+        <div class="grid-3">
+          <article class="place">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Lake view"/>
+            <div class="p">
+              <h3 style="margin:0 0 6px">Sulur Lake</h3>
+              <p class="muted">Quiet waterfront for morning/evening walks. Great spot to unwind.</p>
+            </div>
+          </article>
+          <article class="place">
+            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1600&auto=format&fit=crop" alt="Temple"/>
+            <div class="p">
+              <h3 style="margin:0 0 6px">Local Temples</h3>
+              <p class="muted">Heritage temples around Sulur &amp; nearby villages. Add exact names & photos.</p>
+            </div>
+          </article>
+          <article class="place">
+            <img src="https://images.unsplash.com/photo-1565067075275-2164a4a78bf0?q=80&w=1600&auto=format&fit=crop" alt="Market"/>
+            <div class="p">
+              <h3 style="margin:0 0 6px">Weekly Markets</h3>
+              <p class="muted">Fresh produce, local snacks, and everyday essentials at friendly prices.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="wrap">
+        <h2>Map</h2>
+        <p class="muted">Find Sulur on the map. You can replace this with a custom Google Map.</p>
+        <iframe class="map" loading="lazy" allowfullscreen
+          src="https://www.google.com/maps?q=Sulur%2C%20Tamil%20Nadu&output=embed"></iframe>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <div class="grid-2">
+          <form class="panel" onsubmit="event.preventDefault(); alert('Thanks! This demo form does not send emails.');">
+            <label>Name<br><input required style="width:100%;margin-top:6px" class="input" type="text" placeholder="Your name"/></label>
+            <br><br>
+            <label>Email<br><input required style="width:100%;margin-top:6px" class="input" type="email" placeholder="you@example.com"/></label>
+            <br><br>
+            <label>Message<br><textarea required style="width:100%;min-height:120px;margin-top:6px" class="input" placeholder="Hello from Sulur!"></textarea></label>
+            <br>
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+          <div class="panel">
+            <p><strong>Made for Sulur residents & visitors.</strong></p>
+            <p class="muted">This is a static demo site. To enable forms, add a backend (Google Forms, Netlify Forms, or an API) and update the form action.</p>
+            <div class="pillrow">
+              <span class="tag">Fast</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">One‑page</span>
+              <span class="tag">Customisable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footergrid">
+      <div>
+        <div class="brand"><span class="dot"></span> SULUR<span style="opacity:.7">.com</span></div>
+        <p class="muted">© <span id="year"></span> Sulur.com — A community landing page. Replace this text with your own copyright or organisation details.</p>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <ul class="muted">
+          <li><a href="#about">About Sulur</a></li>
+          <li><a href="#places">Places to visit</a></li>
+          <li><a href="#map">Map</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Follow</strong>
+        <ul class="muted">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
